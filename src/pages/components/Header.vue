@@ -1,6 +1,10 @@
 <template>
     <div>
-       this is header 
+        <div class="head">
+        <div class="header-left iconfont">&#xe610;</div>
+        <div class="header-center"><span class="iconfont btn-search">&#xe625;</span>输入城市/景点/游玩主题</div>
+        <div class="header-right">城市<span class="iconfont show-down">&#xe660;</span></div>
+        </div>
     </div>  
 </template>
 
@@ -10,6 +14,30 @@ export default {
 };
 </script>
 
-<style>
+<style lang="stylus" scoped>
+  .head
+    display:flex
+    color:#fff
+    line-height :.86rem
+    background:#00bcd4
+    .header-left, .header-right
+        width:.64rem
+        text-align :center
+    .header-right
+        width:1.24rem
+        .show-down
+            font-size :.5em
+            margin 0 .5em
+    .header-center
+        flex-grow:1
+        height : .64rem
+        color:#ccc
+        line-height .64rem
+        background:#fff
+        border-radius :.1rem
+        margin: .12rem 0 0 .2rem
+        .btn-search
+            margin: 0 .5em
+
 </style>
 
