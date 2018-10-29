@@ -4,6 +4,8 @@ vue仿去哪儿
 
 单页面应用优缺点：页面跳转快，但由于js渲染机制影响，首屏加载速度慢，seo差
 
+webpack + vue + vue-router + axios
+
 ## 使用到的库
 - 去除浏览器默认样式 引用reset.css
 - 解决border 1px 问题 引用border.css（scale原理）
