@@ -1,29 +1,19 @@
 # travel
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+vue仿去哪儿 
 
-> A Vue.js project
+单页面应用优缺点：页面跳转快，但由于js渲染机制影响，首屏加载速度慢，seo差
 
-## Build Setup
+## 使用到的库
+- 去除浏览器默认样式 引用reset.css
+- 解决border 1px 问题 引用border.css（scale原理）
+- 解决移动端点击3毫秒延迟 引用fastclick库
 
-``` bash
-# install dependencies
-npm install
+## npm install 的一些依赖
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
-vue仿去哪儿app实践
->>>>>>> cf8b2dfd09826b2d13ed1d3953844ad71bc09c8a
-=======
-vue仿去哪儿
->>>>>>> 0d700533bc251d7fed854b60e49ac28fc26a12e6
+1. fastclick 
+1. stylus css预处理器
+1. stylus-loader css预处理器解析器
+1. vue-awesome-swiper vue十分好用的轮播图插件
+1. axios 发送ajax请求
+1. better-scroll 更好用的滚动库插件
