@@ -15,11 +15,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../../assets/style/color.styl'
   .head
     display:flex
     color:#fff
     line-height :.86rem
-    background:#00bcd4
+    background:$colorBlue
     .header-left, .header-right
         width:.64rem
         text-align :center
