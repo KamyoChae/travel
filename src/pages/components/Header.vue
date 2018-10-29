@@ -3,13 +3,16 @@
         <div class="head">
         <div class="header-left iconfont">&#xe610;</div>
         <div class="header-center"><span class="iconfont btn-search">&#xe625;</span>输入城市/景点/游玩主题</div>
-        <div class="header-right">城市<span class="iconfont show-down">&#xe660;</span></div>
+        <div class="header-right">{{city}}<span class="iconfont show-down">&#xe660;</span></div>
         </div>
     </div>  
 </template>
 
 <script>
 export default {
+    props:{
+        city:String
+    },
   name: "HomeHeader"
 };
 </script>

@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="pop-nav">热门推荐</div>
-        <div class="pop-list" v-for="item of popList" :key="item.id">
+        <div class="pop-list" v-for="item of list" :key="item.id">
             <div class="pop-items">
-                <img :src="item.src" alt="">
+                <img :src="item.imgUrl" alt="">
                 <div class="items-right">
                     <span class="title">{{item.title}}</span>
-                    <span class="about">{{item.about}}</span>
+                    <span class="about">{{item.desc}}</span>
                     <span class="more">查看更多</span>
                 </div>
             </div>
@@ -17,34 +17,12 @@
 </template>
 <script>
 export default {
+  props: {
+    list: Array
+  },
   name: "HomePopular",
-  data(){
-      return {
-          popList:[
-              {
-                  id:"001",
-                  src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-42uxOa2POxsNy9ORV3tIJWHl-KX1nIN6-wZpf_pghiJVn5oC0w",
-                  title:"桂林象山景区",
-                  about:"周末半价！周末半价！周末半价！！重要的事情说三遍",
-
-              },
-               {
-                  id:"002",
-                  src:"https://imgs.qunarzz.com/p/tts8/1606/7c/b52927ed3bd0ef7.jpg_180x120_24b52b9b.jpg",
-                  title:"南宁-桂林3日/桂林阳朔漓江包车自由行（20元背景+撑竹筏+钻溶洞+逛西街）",
-                  about:"火车往返高档型酒店等",
-
-              },
-               {
-                  id:"003",
-                  src:"https://imgs.qunarzz.com/p/tts7/1707/31/be18c92f86986b02.jpg_180x120_ab0f851e.jpg",
-                  title:"特惠升级2晚桂林大公馆+1晚阳朔万丽花园",
-                  about:"火车往返高档型酒店等",
-
-              },
- 
-          ]
-      }
+  data() {
+    return {};
   }
 };
 </script>
@@ -64,7 +42,7 @@ export default {
     width: 100%;
     height: 100px;
     padding: 0.5em 0.5em 0 0.5em;
-    margin-bottom .5em
+    margin-bottom: 0.5em;
 
     img {
         width: 100px;
@@ -72,26 +50,20 @@ export default {
     }
 
     .items-right {
+        box-sizing border-box
+        padding .5em
+
         display: flex;
-        flex-direction: column;
-        align-items: space-between; 
-        overflow hidden
-        text-overflow ellipsis
-        white-space nowrap
-        > span {
-            margin: 0.3em;
-        }
-
-        .title {  
-            height 2em
-            width 100%
-        }
-
-        .about {
-            min-height: 3em;
-            line-height: 1.2em;
+        flex-direction: column; 
+        justify-content space-between;
+        .title {
             width: 100%;
-            color: #888; 
+            font-size: 1.2em;
+        }
+
+        .about { 
+            font-size: .9em;
+            color: #888;
         }
 
         .more {
@@ -101,9 +73,7 @@ export default {
             text-align: center;
             border-radius: 4px;
             font-size: 8pt;
-            padding: 0.5em;
-            margin-top: 0;
-            margin-bottom: 0;
+            padding: 0.5em; 
         }
     }
 }
