@@ -1,0 +1,160 @@
+<template>
+    <div class="wrapper" ref="wrap"> 
+        <div>
+            <div class="mycheck">
+                <div class="mycheck-text">当前选择</div>
+                <div class="check-city">
+                    <div class="btn-city">北京</div>
+                </div>
+            </div>
+
+            <div class="hot-city">
+                <div class="mycheck-text">热门城市</div>
+                <div class="check-city">
+                    <div class="btn-city">北京</div>
+                    <div class="btn-city">北京</div>
+                    <div class="btn-city">北京</div>
+                    <div class="btn-city">北京</div>
+                    <div class="btn-city">北京</div>
+                </div>
+            </div>
+
+            <div class="city-sort">
+                <div class="sort-items">
+
+                    <div class="mycheck-text">A</div>
+                    <div class="item-list">
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                    </div>
+
+                </div>
+                 <div class="sort-items">
+
+                    <div class="mycheck-text">A</div>
+                    <div class="item-list">
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                    </div>
+                    
+                </div>
+                 <div class="sort-items">
+
+                    <div class="mycheck-text">A</div>
+                    <div class="item-list">
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                    </div>
+                    
+                </div>
+                 <div class="sort-items">
+
+                    <div class="mycheck-text">A</div>
+                    <div class="item-list">
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                    </div>
+                    
+                </div>
+                 <div class="sort-items">
+
+                    <div class="mycheck-text">A</div>
+                    <div class="item-list">
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                    </div>
+                    
+                </div>
+                 <div class="sort-items">
+
+                    <div class="mycheck-text">A</div>
+                    <div class="item-list">
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                    </div>
+                    
+                </div>
+                 <div class="sort-items">
+
+                    <div class="mycheck-text">A</div>
+                    <div class="item-list">
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                        <div class="item">阿拉善</div>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </div> 
+</template>
+<script>
+import BScroll from 'better-scroll'
+export default {
+    name: "CityList",
+    mounted() {
+        console.log(this.$refs.wrap)
+        const scroll = new BScroll(this.$refs.wrap) 
+        console.log(scroll)
+    },
+
+}
+</script>
+<style lang="stylus" scoped>
+@import '../../../assets/style/color.styl'
+.wrapper 
+    overflow hidden
+    position absolute
+    top 5.2em
+    left 0 
+    right 0
+    bottom 0 
+    .mycheck-text
+        background #eee
+        padding .8em .5em .5em .5em
+        color #424242
+    .check-city
+        width 100%
+        min-height 3em 
+        padding 1em 2em 1em 1em
+        .btn-city
+            display inline-block
+            width 24.3%
+            text-align center
+            border-radius 2px
+            padding .2em
+            border 1px solid #6ea0ba
+            margin 0 .5em .5em 0
+
+    .item
+        border-bottom 1px solid #ddd
+        padding .8em
+
+
+</style>
