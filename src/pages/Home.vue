@@ -4,6 +4,7 @@
        <home-swiper></home-swiper> 
        <home-icon></home-icon>
        <home-popular></home-popular>
+       <home-weekend></home-weekend>
     </div>
 </template>
 
@@ -13,6 +14,8 @@ import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcon from './components/Icon'
 import HomePopular from './components/Popular'
+import HomeWeekend from './components/Weekend'
+import axios from "axios"
 export default {
   name: "Home",
   components:{
@@ -21,6 +24,19 @@ export default {
       HomeSwiper,
       HomeIcon,
       HomePopular,
+      HomeWeekend,
+  },
+  mounted() {
+      this.getHomInfo()
+  },
+  methods:{
+      getHomInfo () {
+          axios.get("/api/index.json")
+                .then(this.infoSucc)
+      },
+      infoSucc(res){
+          console.log(res)
+      }
   }
 
 };
