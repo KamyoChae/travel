@@ -16,9 +16,13 @@
             </div>
 
             <div class="city-sort">
-                <div class="sort-items" v-for="(items, key) of cities" :key="key">
+                <div class="sort-items" 
+                v-for="(items, key) of cities" 
+                :key="key" 
+                :ref="key"
+                >
 
-                    <div class="mycheck-text">{{key}}</div>
+                    <div class="mycheck-text" >{{key}}</div>
                     <div class="item-list" v-for="item of items" :key="item.id">
                         <div class="item" > {{item.name}}</div> 
                     </div> 
@@ -32,13 +36,22 @@ import BScroll from 'better-scroll'
 export default {
     props:{
         hotCities: Array,
-        cities: Object
+        cities: Object,
+        letter: String
     },
     name: "CityList",
     mounted() {
         console.log(this.$refs.wrap)
-        const scroll = new BScroll(this.$refs.wrap)  
+        this.scroll = new BScroll(this.$refs.wrap)  
     },
+    watch:{
+        letter(){
+            if(this.letter){
+                const element = this.$refs[this.letter][0]
+                this.scroll.scrollToElement(element)
+            }
+        }
+    }
 
 }
 </script>

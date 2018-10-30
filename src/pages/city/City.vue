@@ -1,8 +1,11 @@
 <template>
     <div> 
         <city-header></city-header>
-        <city-list :cities="cities" :hotCities="hotCities"></city-list>
-        <city-charshow :cities="cities"></city-charshow>
+        <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
+        <city-charshow 
+        :cities="cities" 
+        @change="getLetter"
+        ></city-charshow>
     </div>
 </template>
 
@@ -21,7 +24,8 @@ export default {
     data(){
         return {
             cities:{},
-            hotCities:[]
+            hotCities:[],
+            letter:"",
         }
     },
     mounted() {
@@ -40,6 +44,9 @@ export default {
                 this.hotCities = data.hotCities
                 this.cities = data.cities
             }
+        },
+        getLetter(letter){
+            this.letter = letter
         }
     }
 }
