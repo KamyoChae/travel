@@ -4,7 +4,7 @@
         <div class="header-left iconfont">&#xe610;</div>
         <div class="header-center"><span class="iconfont btn-search">&#xe625;</span>输入城市/景点/游玩主题</div>
         <router-link to="/City">
-        <div class="header-right">{{city}}<span class="iconfont show-down">&#xe660;</span></div>
+        <div class="header-right">{{this.$store.state.city}}<span class="iconfont show-down">&#xe660;</span></div>
         </router-link>
         </div>
     </div>  

@@ -4,14 +4,18 @@
             <div class="mycheck">
                 <div class="mycheck-text">当前选择</div>
                 <div class="check-city">
-                    <div class="btn-city">北京</div>
+                    <div class="btn-city">{{this.$store.state.city}}</div>
                 </div>
             </div>
 
             <div class="hot-city">
                 <div class="mycheck-text">热门城市</div>
                 <div class="check-city" >
-                    <div class="btn-city" v-for="item of hotCities" :key="item.id" >{{item.name}}</div> 
+                    <div class="btn-city" 
+                    v-for="item of hotCities" 
+                    :key="item.id" 
+                    @click="handlChangeCity(item.name)"
+                    >{{item.name}}</div> 
                 </div>
             </div>
 
@@ -24,7 +28,7 @@
 
                     <div class="mycheck-text" >{{key}}</div>
                     <div class="item-list" v-for="item of items" :key="item.id">
-                        <div class="item" > {{item.name}}</div> 
+                        <div class="item" @click="handlChangeCity(item.name)" > {{item.name}}</div> 
                     </div> 
                 </div>
             </div>
@@ -41,8 +45,12 @@ export default {
     },
     name: "CityList",
     mounted() {
-        console.log(this.$refs.wrap)
         this.scroll = new BScroll(this.$refs.wrap)  
+    },
+    methods:{
+        handlChangeCity(city){ 
+            this.$store.dispatch("changeCity",city)
+        }
     },
     watch:{
         letter(){

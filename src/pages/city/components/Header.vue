@@ -8,7 +8,7 @@
         </div> 
         <input type="text" class="search" placeholder="搜索城市..." v-model="oInput">
         <div class="city-list" v-show="noInput">
-            <div class="city-name" v-for="item of cityList" :key="item.id">{{item.name}}</div>
+            <div class="city-name" v-for="item of cityList" :key="item.id" @click="handlChangeCity(item.name)">{{item.name}}</div>
             <div class="city-name" v-show="!noData">没有找到相关城市</div>
         </div>
     </div>
@@ -30,6 +30,11 @@ export default {
     computed:{
         noData(){
             return this.cityList.length
+        }
+    },    
+    methods:{
+        handlChangeCity(city){ 
+            this.$store.dispatch("changeCity",city)
         }
     },
     watch : {
