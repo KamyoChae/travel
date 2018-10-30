@@ -1,6 +1,6 @@
 <template>
     <div> 
-        <city-header></city-header>
+        <city-header :cities="cities"></city-header> 
         <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
         <city-charshow 
         :cities="cities" 
@@ -12,12 +12,12 @@
 <script>
 import axios from 'axios'
 import CityHeader from './components/Header'
-import CityList from './components/List'
+import CityList from './components/List' 
 import CityCharshow from './components/Charshow'
 export default {
     name:'City',
     components:{
-        CityHeader,
+        CityHeader, 
         CityList,
         CityCharshow
     },

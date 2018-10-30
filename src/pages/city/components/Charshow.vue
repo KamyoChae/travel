@@ -47,8 +47,7 @@ export default {
                 if(index >= 0 && index < this.letters.length){
                     console.log(this.letters[index])
                     this.$emit('change', this.letters[index])
-                } 
-
+                }
             }
         },
         touchHandleStart(){
