@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<script>
+<script> 
 import HomeHeader from "./components/Header";
 import HomeSwiper from "./components/Swiper";
 import HomeIcon from "./components/Icon";
@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     getHomInfo() {
-      axios.get("/api/index.json?city=" + this.$store.city).then(this.infoSucc);
+      axios.get("/api/index.json?city=" + this.$store.state.city).then(this.infoSucc);
     },
     infoSucc(res) {
       if (res.data) {
@@ -55,8 +55,8 @@ export default {
     this.getHomInfo();
   },
   activated() {
-      if(this.lastCity !== this.$store.city ){
-          this.lastCity = this.$store.city
+      if(this.lastCity !== this.$store.state.city ){
+          this.lastCity = this.$store.state.city
           this.getHomInfo();
       }
   },
