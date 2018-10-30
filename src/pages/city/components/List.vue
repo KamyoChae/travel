@@ -50,6 +50,7 @@ export default {
     methods:{
         handlChangeCity(city){ 
             this.$store.dispatch("changeCity",city)
+            this.$router.push("/")
         }
     },
     watch:{

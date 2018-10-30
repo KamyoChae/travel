@@ -24,7 +24,7 @@ export default {
             name:'Header',
             oInput:null,
             cityList:[], 
-            noInput:true,
+            noInput:false,
         }
     },
     computed:{

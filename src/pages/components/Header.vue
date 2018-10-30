@@ -4,7 +4,7 @@
         <div class="header-left iconfont">&#xe610;</div>
         <div class="header-center"><span class="iconfont btn-search">&#xe625;</span>输入城市/景点/游玩主题</div>
         <router-link to="/City">
-        <div class="header-right">{{this.$store.state.city}}<span class="iconfont show-down">&#xe660;</span></div>
+        <div class="header-right">{{this.$store.state.city}}</div>
         </router-link>
         </div>
     </div>  
@@ -30,11 +30,9 @@ export default {
         width:.64rem
         text-align :center
     .header-right
-        width:1.24rem
-        color #fff
-        .show-down
-            font-size :.5em
-            margin 0 .5em
+        min-width: 1.24rem
+        padding  0 .1rem
+        color #fff 
     .header-center
         flex-grow:1
         height : .64rem
