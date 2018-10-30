@@ -1,25 +1,14 @@
 <template>
     <div class="wrapper">
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
-        <span class="char">A</span>
+        <span class="char"  v-for="(item, key) of cities" :key="key">{{key}}</span> 
     </div>
 </template>
 
 <script>
 export default {
+    props:{
+        cities: Object
+    },
     name:'Charshow',
 
 }

@@ -10,106 +10,19 @@
 
             <div class="hot-city">
                 <div class="mycheck-text">热门城市</div>
-                <div class="check-city">
-                    <div class="btn-city">北京</div>
-                    <div class="btn-city">北京</div>
-                    <div class="btn-city">北京</div>
-                    <div class="btn-city">北京</div>
-                    <div class="btn-city">北京</div>
+                <div class="check-city" >
+                    <div class="btn-city" v-for="item of hotCities" :key="item.id" >{{item.name}}</div> 
                 </div>
             </div>
 
             <div class="city-sort">
-                <div class="sort-items">
+                <div class="sort-items" v-for="(items, key) of cities" :key="key">
 
-                    <div class="mycheck-text">A</div>
-                    <div class="item-list">
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                    </div>
-
-                </div>
-                 <div class="sort-items">
-
-                    <div class="mycheck-text">A</div>
-                    <div class="item-list">
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                    </div>
-                    
-                </div>
-                 <div class="sort-items">
-
-                    <div class="mycheck-text">A</div>
-                    <div class="item-list">
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                    </div>
-                    
-                </div>
-                 <div class="sort-items">
-
-                    <div class="mycheck-text">A</div>
-                    <div class="item-list">
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                    </div>
-                    
-                </div>
-                 <div class="sort-items">
-
-                    <div class="mycheck-text">A</div>
-                    <div class="item-list">
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                    </div>
-                    
-                </div>
-                 <div class="sort-items">
-
-                    <div class="mycheck-text">A</div>
-                    <div class="item-list">
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                    </div>
-                    
-                </div>
-                 <div class="sort-items">
-
-                    <div class="mycheck-text">A</div>
-                    <div class="item-list">
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
-                        <div class="item">阿拉善</div>
+                    <div class="mycheck-text">{{key}}</div>
+                    <div class="item-list" v-for="item of items" :key="item.id">
+                        <div class="item" > {{item.name}}</div> 
                     </div> 
-                </div> 
+                </div>
             </div>
         </div>
     </div> 
@@ -117,11 +30,14 @@
 <script>
 import BScroll from 'better-scroll'
 export default {
+    props:{
+        hotCities: Array,
+        cities: Object
+    },
     name: "CityList",
     mounted() {
         console.log(this.$refs.wrap)
-        const scroll = new BScroll(this.$refs.wrap) 
-        console.log(scroll)
+        const scroll = new BScroll(this.$refs.wrap)  
     },
 
 }
